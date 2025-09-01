@@ -1,7 +1,7 @@
 # Etapa 1: construir con Maven + JDK 17
 FROM maven:3.9-eclipse-temurin-17 AS build
 WORKDIR /app
-COPY pom.xml .
+COPY demo/pom.xml .
 RUN mvn -B -q -DskipTests dependency:go-offline
 COPY demo/src ./src
 RUN mvn -B -q -DskipTests package
